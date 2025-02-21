@@ -7,14 +7,13 @@ terraform {
     }
   }
   backend "s3" {
-    bucket         = "kops-tapeloop-storage"
-    region         = "us-east-1"
-    key            = "eks/terraform.tfstate"
-    dynamodb_table = "Lock-Files"
-    encrypt        = true
+    bucket  = "kops-tapeloop-storage"
+    region  = "us-east-1"
+    key     = "eks/terraform.tfstate"
+    encrypt = true
   }
 }
 
 provider "aws" {
-  region  = var.aws-region
+  region = var.aws-region
 }
